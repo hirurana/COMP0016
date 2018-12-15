@@ -9,6 +9,7 @@ file that it downloads and only extract and clean new data that it finds
 '''
 
 # TODO make this formatter parameterised so that we can connect it to the scrapers
+# # TODO upload ICO.json to server
 
 result = {}
 
