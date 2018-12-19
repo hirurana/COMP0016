@@ -14,6 +14,11 @@ result = []
 
 
 def ico_excel_formatter(excel_file, data_title):
+    multiplier = 1
+    multiplier_check = pd.read_excel(excel_file, header=1, nrows=1, usecols=0)
+    multiplier_value = multiplier_check.values[0][0]
+    if multiplier_value == "(Thousands)":
+        multiplier = 1000
 
     df = pd.read_excel(excel_file, header=5)
     # Get country column name
@@ -24,15 +29,20 @@ def ico_excel_formatter(excel_file, data_title):
         offset = 2
 
     years = list(df.columns.values)[offset:]
+    num_of_data_points = len(years)
 
     for country in df[column_name]:
-        df_values = np.array(df.loc[df[column_name] == country].values.tolist()[0][offset:]).tolist()
-        # TODO currently returning as float but int conversion causes nan to mess up
+        df_values = (np.array(df.loc[df[column_name] == country].values.tolist()[0][offset:]) * multiplier).tolist()
+
         country_profile = list(filter(lambda item: item['country'] == country, result))
+        data = []
+        for i in range(num_of_data_points):
+            data.append({"year": years[i], "value": df_values[i]})
+
         if not country_profile:
-            result.append({"country": country, data_title: dict(zip(years, df_values))})
+            result.append({"country": country, data_title: data})
         else:
-            country_profile[0].update({data_title: dict(zip(years, df_values))})
+            country_profile[0].update({data_title: data})
 
 
 def run():
