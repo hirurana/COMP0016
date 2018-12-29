@@ -13,12 +13,13 @@ file that it downloads and only extract and clean new data that it finds
 # TODO upload ICO.json to server
 # TODO nans were change to 0 sort this out
 result = []
+world_data = {"id": "WORLD", "data": []}
 
 
 def manually_add_alpha_code(country):
     alpha_code = input("Enter alpha two code for " + country + ": ")
     if alpha_code == "":
-        return "null"
+        return
     return alpha_code
 
 
@@ -37,6 +38,15 @@ def get_alpha_code(country):
         return manually_add_alpha_code(country)
     else:
         return code
+
+
+def get_world_total(df, data_title, years):
+    if not world_data["data"]:
+        world_data["data"] = [{"year": years[i], data_title: df[years[i]].sum()} for i in range(len(years))]
+    else:
+        for d in world_data['data']:
+            i = world_data['data'].index(d)
+            d[data_title] = df[years[i]].sum()
 
 
 def ico_excel_formatter(excel_file, data_title):
@@ -66,6 +76,7 @@ def ico_excel_formatter(excel_file, data_title):
                 i = country_profile[0]['data'].index(d)
                 d[data_title] = df_values[i]
 
+    get_world_total(df, data_title, years)
 
 def run():
     excel_files = [f for f in listdir('xl_files/') if isfile(join('xl_files/', f)) and f[-5:] == '.xlsx' and f[0] != '~']
@@ -79,9 +90,12 @@ def run():
     if len(unextracted_files) != 0:
         raise FileExistsError(str(unextracted_files) + " could not be parsed")
 
+    # Append world data
+    result.append(world_data)
+
     with open('ICO.json', 'w') as output:
         json.dump(result, output)
-
+    print(world_data)
     if not result:
         raise ValueError("No data could be parsed")
 
