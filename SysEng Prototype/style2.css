@@ -1,0 +1,86 @@
+body{
+    background: url(images.jpeg) no-repeat;
+    background-size: cover;
+}
+
+span{
+   
+    color: indigo;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+a:link {
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  }
+  
+  a:visited {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
+input[type=checkbox] + label {
+    display: block;
+    margin: 10px;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  input[type=checkbox] {
+    display: none;
+   
+  }
+  
+  input[type=checkbox] + label:before {
+    content: "\2713";
+    border: 0.1em solid rgb(87, 48, 48);
+    border-radius: 0.4em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-right: 0.2em;
+    vertical-align: text-bottom;
+    color: transparent;
+    transition: .3s;
+  }
+  
+  input[type=checkbox] + label:active:before {
+    transform: scale(0);
+  }
+  
+  input[type=checkbox]:checked + label:before {
+    background-color: rgb(113, 100, 153);
+    border-color: rgb(113, 100, 153);
+    color: #fff;
+  }
+  
+ p{
+     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 6px;
+    padding-bottom: 9px;
+    color: steelblue;
+    font-size: 18px;
+ }
+     #pos{
+    position:relative;
+    left: 2%;
+    margin-top: 60px;
+}
+button {
+    background: rgb(113, 100, 153);
+    color: rgb(12, 163, 238);
+    width: 100px;
+    height: 40px;
+    position:relative;
+    left: 12px;
+    border-radius: 10px;
+    top: 4px;
+}
+    button a {
+            color: rgb(201, 219, 209);
+            font-size: 12px;
+    }

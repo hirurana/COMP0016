@@ -1,0 +1,57 @@
+body{
+    background: url(images.jpeg) no-repeat;
+    background-size: cover;
+}
+
+span{
+  color: indigo;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+a:link {
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.customSelect{
+  position: absolute;
+    top: 55%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+.customSelect select{
+  width:320px;
+  height:40px;
+  background: rgb(181, 174, 202);
+  border: none;
+  -webkit-appearance: none;
+  padding: 0 50px 0 20px;
+  cursor: pointer;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(79, 81, 82);
+  
+ 
+}
+button {
+  background:rgb(113, 100, 153);
+  color: rgb(201, 219, 209);
+  width: 60px;
+  height: 40px;
+  border-radius: 6px;
+  position:relative;
+  bottom: 40px;
+  left: 345px;
+
+}
+button a{
+  color: rgb(201, 219, 209);
+}
+
