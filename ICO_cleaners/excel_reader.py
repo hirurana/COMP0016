@@ -11,7 +11,6 @@ file that it downloads and only extract and clean new data that it finds
 '''
 # sort out warnings
 # TODO upload ICO.json to server
-# TODO nans were change to 0 sort this out
 result = []
 world_data = {"id": "WORLD", "data": []}
 
@@ -23,6 +22,7 @@ def manually_add_alpha_code(country):
     return alpha_code
 
 
+# todo multiplier function does not work
 def set_multiplier(excel_file):
     multiplier = 1
     multiplier_check = pd.read_excel(excel_file, header=1, nrows=1, usecols=0)
