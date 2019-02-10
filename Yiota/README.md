@@ -1,2 +1,3 @@
-# Investment-Platform-Website
-As part of COMP0016 module 
+# Investment-Platform-Source code
+As part of COMP0016 module
+
