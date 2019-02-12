@@ -7,7 +7,11 @@ var logger = require('morgan');
 var mongo = require('mongodb');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var aboutRouter = require('./routes/about');
+var coffeeRouter = require('./routes/coffee');
+var articlesRouter = require('./routes/articles');
+var worldmapRouter = require('./routes/worldmap');
+var sentimentanalysisRouter = require('./routes/sentimentanalysis');
 
 var app = express();
 
@@ -22,7 +26,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/about', aboutRouter);
+app.use('/coffee', coffeeRouter);
+app.use('/coffee/articles', articlesRouter);
+app.use('/coffee/worldmap', worldmapRouter);
+app.use('/coffee/sentimentanalysis', sentimentanalysisRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

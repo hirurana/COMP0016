@@ -1,8 +1,31 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("frost.jpg");
+
 }
 
-a {
-  color: #00B7FF;
+h3 {
+  color: whitesmoke;
 }
+
+h2 {
+  color: whitesmoke;
+}
+
+h1 {
+  color: snow;
+  text-align: center;
+}
+
+p {
+  color: #cfdff9;
+
+}
+
+
+
+/* a {
+  color: #00B7FF;
+} */
+
