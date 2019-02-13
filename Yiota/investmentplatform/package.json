@@ -6,6 +6,8 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "@amcharts/amcharts4": "^4.1.6",
+    "@amcharts/amcharts4-geodata": "^4.1.1",
     "cookie-parser": "~1.4.3",
     "d3": "^5.9.1",
     "debug": "~2.6.9",

@@ -1,9 +1,10 @@
 var express = require('express');
+var config = require('../public/external_data/ICO.json');
 var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('worldmap page');
+  res.render('worldmap', {title: 'ICO World Data'});
 });
 
 module.exports = router;
