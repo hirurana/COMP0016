@@ -2,26 +2,28 @@ extends layout
 
 block content
 
-  
+  nav.navbar.navbar-default.navbar-fixed-top
+    div.container-fluid
+      
+    
 
-  
-  h3 next generation
-  h2 Asset Investment Platform
+  h4 next generation
+  h3 Asset Investment Platform
 
   img(src="graph.png")
 
-  h1 Be Smarter with Money
-
-  p Choose Commodity to invest in
   
+  div.wrapper
+    h1.home-subtitle Be Smarter with Money
 
-  
-
-  div(class="dropdown")
-        a(class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ) Select 
-          b.caret
-        ul.dropdown-menu
-          li: a(class="dropdown-item" href='/coffee') Coffee
-          
-  
+    p.p-select Select commodity to invest in
+    
+    div.dropdown
+      a.btn.btn-secondary.dropdown-toggle#dropdownMenuButton.select-commodity(type="button" data-toggle="dropdown") Select 
+        b.caret
+      ul.dropdown-menu
+        li: a.dropdown-item.select-commodity-choices(href='/coffee') Coffee
+        
+            
+    
 

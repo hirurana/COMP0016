@@ -1,8 +1,11 @@
 body {
   padding: 50px;
-  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url("frost.jpg");
+}
 
+h4 {
+  color: whitesmoke;
 }
 
 h3 {
@@ -15,17 +18,47 @@ h2 {
 
 h1 {
   color: snow;
-  text-align: center;
 }
 
 p {
   color: #cfdff9;
+}
 
+.wrapper {
+  position: absolute;
+  left: 40%;
+  margin-left: -150px;
+}
+
+.home-subtitle {
+  padding-bottom: 25px;
+}
+
+.p-select {
+  padding-bottom: 10px;
+}
+
+.select-commodity {
+  padding: 10px;
+  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(73, 73, 73);  
+}
+
+.select-commodity-choices {
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  align-content: left;
+}
+
+.card-action {
+  border: 2px solid rgb(252, 155, 50);
+  background: rgb(239, 124, 0);
+  border-radius: 10px;
+  padding: 20px;
 }
 
 
+.space {
+  padding-bottom: 15px;
+}
 
-/* a {
-  color: #00B7FF;
-} */
 

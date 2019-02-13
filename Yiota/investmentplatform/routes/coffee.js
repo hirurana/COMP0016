@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
+/* GET coffee page. */
 router.get('/', function(req, res, next) {
-  res.send('coffee page');
+  res.render('coffee', { title: 'Investment Platform - Coffee' });
 });
 
 module.exports = router;
