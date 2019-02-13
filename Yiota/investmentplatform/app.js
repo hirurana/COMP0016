@@ -6,6 +6,8 @@ var logger = require('morgan');
 
 var mongo = require('mongodb');
 
+var d3 = require("d3");
+
 var indexRouter = require('./routes/index');
 var aboutRouter = require('./routes/about');
 var coffeeRouter = require('./routes/coffee');
