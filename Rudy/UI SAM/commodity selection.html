@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Commodity Selection</title>
+        <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"  media="screen,projection"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <style> 
+        body{
+          background: url(images.jpeg) no-repeat;
+          background-size: cover;
+            }</style>
+    <nav>
+            
+        <div class="nav-wrapper purple lighten-2">
+          <div class="col s12 m10 l9">
+            <a href="" class="breadcrumb white-text">Main Menu</a>
+            <a href="" class="breadcrumb grey-text text-lighten-1 ">Commodity Selection</a>
+            
+          </div>
+        </div>
+      </nav>
+    
+
+      <h1 class=" center-align red-text text-accent-2">Scientific Asset Management</h1>
+     
+
+      <div class= " section container">
+        <div class=" row">
+        <div class="  section blue-text input-field col s6 m6 l6 center-align " id="hello"  >
+        <select>
+          <option value="" disabled selected>Choose a commodity</option>
+          <option value="1">Coffee</option>
+          <option value="2">Soya</option>
+          <option value="3">Option 3</option>
+        </select>
+        <a href="./selecting factors.html "><div class="btn waves-effect waves-light purple lighten-2 white-text center ">Go!</div></a>
+        </div>
+        </div>
+        </div>
+       
+     <style>
+         .row > div{
+                  
+              height: 300px;
+                }
+         .row{
+              margin: 40px auto;
+                }
+        #hello{
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+        }
+    </style>
+   
+          
+
+      <script src= "https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script> 
+      $(document).ready(function(){
+    $('select').formSelect();
+  });
+        
+      </script>
+    </body>
+    </html>
