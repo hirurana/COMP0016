@@ -154,7 +154,7 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
     chart.scrollbarX.series.push(disappearanceSeries);
     chart.scrollbarX.series.push(netImportsSeries);
     chart.scrollbarX.series.push(reExportsSeries);
-    // chart.scrollbarX.parent = chart.bottomAxesContainer;  THIS LINE IS CAUSING PROBLEMS
+    // chart.scrollbarX.parent = chart.bottomAxesContainer;  THIS LINE IS CAUSING PROBLEMS // TODO: SORT THIS OUT
 
     // LEGEND
     chart.legend = new am4charts.Legend();
