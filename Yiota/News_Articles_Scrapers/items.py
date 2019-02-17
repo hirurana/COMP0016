@@ -10,7 +10,7 @@ import scrapy
 
 class CoffeeNewsItem(scrapy.Item):
     title = scrapy.Field()
-    url = scrapy.Field()
-    date = scrapy.Field()
-    summary = scrapy.Field()
     text = scrapy.Field()
+    date = scrapy.Field()
+    url = scrapy.Field()
+    source = scrapy.Field()

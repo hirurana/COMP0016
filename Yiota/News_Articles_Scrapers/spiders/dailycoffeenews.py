@@ -3,7 +3,6 @@ import scrapy
 from datetime import datetime, timedelta
 
 from coffee_news.items import CoffeeNewsItem
-from coffee_news.loaders import DailyCoffeeNewsLoader
 
 class DailycoffeenewsSpider(scrapy.Spider):
     name = 'dailycoffeenews'
@@ -20,19 +19,17 @@ class DailycoffeenewsSpider(scrapy.Spider):
             date += timedelta(days=1)
 
     def generate_url(self, date, page_number=None):
-        url = 'http://https://dailycoffeenews.com/' + date.strftime("%Y/%m/%d") + "/"
+        url = 'http://dailycoffeenews.com/' + date.strftime("%Y/%m/%d") + "/"
         if page_number:
             url  += "page/" + str(page_number) + "/"
         return url
 
-   
-        def parse(self, response):
+    def parse(self, response):
         date = response.meta['date']
         page_number = response.meta['page_number']
-
-      
+        
         if response.status == 200:
-            articles = response.xpath('//h2/a/@href').extract()
+            articles = response.xpath('//*[@id="maincontent"]/div/div/div/div/article/div/div[2]/h2/a/@href').extract() 
             for url in articles:
                 request = scrapy.Request(url,
                                 callback=self.parse_article)
@@ -46,12 +43,11 @@ class DailycoffeenewsSpider(scrapy.Spider):
             request.meta['page_number'] = page_number
             yield request
 
-
-
     def parse_article(self, response):
-        l = DailyCoffeeNewsLoader(item=CoffeeNewsItem(), response=response)
-        l.add_xpath('title', '//h2/text()')
-        l.add_xpath('text', '//div[(@class="entry")]/p//text()')
-        l.add_value('date', str(response.meta['date']))
-        l.add_value('url', response.url)
-        return l.load_item()
+        item = CoffeeNewsItem()
+        item['title'] = response.xpath('//h1/text()').extract_first()
+        item['text'] = response.xpath('//div[@class="entry"]//text()').extract()
+        item['date'] = str(response.meta['date'])
+        item['url'] = response.url
+        item['source'] = "dailycoffeenews.com"
+        yield item
