@@ -1,0 +1,12 @@
+$(document).ready(function(){
+    $.getJSON("articles.json", function(data){
+        var recent_news = '';
+        $.each(data, function( value){
+            recent_news += '<tr>';
+            recent_news += '<td>' +value.title+ '</td>';
+            recent_news += '</tr>';
+        });
+        $('#news_table').append(recent_news);
+    });
+});
+      
