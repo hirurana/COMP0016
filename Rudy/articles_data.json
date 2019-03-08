@@ -1,0 +1,127 @@
+[
+{
+   "Title" : "Many coffee species threatened with extinction, scientists warn",
+   "Article" : "lorem ipsum",
+   "Date" : "16 1 19",
+   "URL" : "https://uk.reuters.com/article/us-science-coffee-extinction/many-coffee-species-threatened-with-extinction-scientists-warn-idUKKCN1PA2MA",
+   "Sentiment" : 0.2 ,
+   "Source" : "Reuters"
+},
+
+{
+    "Title" : "Indigenous Indians fight deforestation threat with gourmet coffee",
+    "Article" : "lorem ipsum",
+    "Date" : "15/10/18" ,
+    "URL" : "https://uk.reuters.com/article/india-landrights-coffee/indigenous-indians-fight-deforestation-threat-with-gourmet-coffee-idUKL8N1WR0C4",
+    "Sentiment" :0.7 ,
+    "Source" : "Reuters"
+ },
+
+
+ {
+    "Title" : "Brazil likely to produce another large coffee crop in 2019 - company" ,
+    "Article" : "lorem ipsum",
+    "Date" : "6 12 18",
+    "URL" : "https://uk.reuters.com/article/brazil-coffee-industry/brazil-likely-to-produce-another-large-coffee-crop-in-2019-company-idUKE6N1TR01T",
+    "Sentiment" : 0.8 ,
+    "Source" : "Reuters"
+ },
+ 
+ 
+ {
+    "Title" : "FEATURE-The coffee farmers betting on blockchain to boost business",
+    "Article" : "lorem ipsum",
+    "Date" : "18 2 19",
+    "URL" : "https://uk.reuters.com/article/ethiopia-coffee-blockchain/feature-the-coffee-farmers-betting-on-blockchain-to-boost-business-idUKL5N208090",
+    "Sentiment" : 0.6,
+    "Source" : "Reuters"
+ },
+
+
+ {
+    "Title" : "Honduran coffee exports jump more than 90 pct in October",
+    "Article" : "lorem ipsum",
+    "Date" : "2  18",
+    "URL" : "https://uk.reuters.com/article/honduras-coffee/honduran-coffee-exports-jump-more-than-90-pct-in-october-idUKL2N1XC2K3",
+    "Sentiment" : 0.8,
+    "Source" : "Reuters"
+ },
+ 
+ 
+ {
+    "Title" : "Coffee producers seek urgent talks with industry on low prices",
+    "Article" : "lorem ipsum",
+    "Date" : "17 9 18",
+    "URL" : "https://uk.reuters.com/article/us-coffee-producers-prices/coffee-producers-seek-urgent-talks-with-industry-on-low-prices-idUKKCN1LX1K2",
+    "Sentiment" : 0.1,
+    "Source" : "Reuters"
+ },
+ 
+
+ {
+    "Title" : "Coffee price slump leaves farmers earning less than a cent a cup",
+    "Article" : "lorem ipsum",
+    "Date" : "14 1 19",
+    "URL" : "https://uk.reuters.com/article/coffee-farmers/coffee-price-slump-leaves-farmers-earning-less-than-a-cent-a-cup-idUKL8N1YJ4D2" ,
+    "Sentiment" : 0.1,
+    "Source" : "Reuters"
+ },
+ 
+
+ {
+    "Title" : "Brazil green coffee exports jump 25.9 pct in November -trade group",
+    "Article" : "lorem ipsum",
+    "Date" : "11 12 18" ,
+    "URL" : "https://uk.reuters.com/article/brazil-coffee-exports/brazil-green-coffee-exports-jump-25-9-pct-in-november-trade-group-idUKE6N1TR01Z",
+    "Sentiment" : 0.6,
+    "Source" : "Reuters"
+ },
+ 
+
+ {
+    "Title" : "Renewable brew: Indonesian geothermal project energises women coffee growers",
+    "Article" : "lorem ipsum",
+    "Date" : "31 10 18" ,
+    "URL" : "https://uk.reuters.com/article/indonesia-coffee-women/renewable-brew-indonesian-geothermal-project-energises-women-coffee-growers-idUKL3N1XB3NG",
+    "Sentiment" : 0.5,
+    "Source" : "Reuters"
+ },
+ 
+ 
+ {
+    "Title" : "Colombia coffee growers seek government aid as prices languish",
+    "Article" :  "lorem ipsum",
+    "Date" : "20 2 19" ,
+    "URL" : "https://uk.reuters.com/article/colombia-coffee/colombia-coffee-growers-seek-government-aid-as-prices-languish-idUKL1N20F1E9" ,
+    "Sentiment" : 0.1,
+    "Source" : "Reuters"
+ },
+ 
+
+ {
+    "Title" : "New machine offers relief for Colombian coffee-growers' labour woes ",
+    "Article" : "lorem ipsum",
+    "Date" : "22 11 18",
+    "URL" : "https://uk.reuters.com/article/uk-colombia-coffee/new-machine-offers-relief-for-colombian-coffee-growers-labour-woes-idUKKCN1NR2DM",
+    "Sentiment" : 0.6,
+    "Source" : "Reuters"
+ },
+ 
+
+ {
+    "Title" : "Flood damage may slash India's coffee output by 20 pct -trade body",
+    "Article" : "lorem ipsum",
+    "Date" : "23 8 18",
+    "URL" : "https://uk.reuters.com/article/india-coffee-output/flood-damage-may-slash-indias-coffee-output-by-20-pct-trade-body-idUKL3N1VE3VV",
+    "Sentiment" : 0.2 ,
+    "Source" : "Reuters"
+ }
+ 
+
+]
+ 
+ 
+ 
+ 
+ 
+ 
