@@ -42,4 +42,3 @@ chart.cursor.xAxis = dateAxis;
 var scrollbarX = new am4charts.XYChartScrollbar();
 scrollbarX.series.push(series);
 chart.scrollbarX = scrollbarX;
-
