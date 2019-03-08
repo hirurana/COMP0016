@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('sentiment analysis page');
+  res.render('stockChartPage', {title: 'Market Data'});
 });
 
 module.exports = router;

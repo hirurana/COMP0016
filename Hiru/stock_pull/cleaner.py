@@ -14,9 +14,11 @@ df = df.fillna(value=0)
 print("Generating JSON array...")
 for row in df.iterrows():
     # Create JSON object
-    data_point = {"date": str(row[1]['Date'].date()), "last_price_(USD)": row[1]['Last Price'], "open_interest": row[1]['Open Interest'], "simple_15_day_moving_avg": row[1]['SMAVG (15)'], "sentiment": random.uniform(0, 1)}
+    data_point = {"date": str(row[1]['Date'].date()), "last_price_USD": row[1]['Last Price'], "open_interest": row[1]['Open Interest'], "simple_15_day_moving_avg": row[1]['SMAVG (15)'], "sentiment": random.uniform(0, 1)}
     print(data_point)
     result.append(data_point)
+
+result = result[::-1]
 
 # Write to file
 print("Writing to JSON file...")

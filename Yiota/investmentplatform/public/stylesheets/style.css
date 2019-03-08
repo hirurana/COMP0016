@@ -82,3 +82,8 @@ p {
     background-color: #efefef;
 }
 /* If you want the content centred horizontally and vertically */
+
+.full  {
+    background-color: #efefef;
+    height: 100%;
+}

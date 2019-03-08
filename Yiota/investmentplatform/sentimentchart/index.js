@@ -1,44 +1,52 @@
 am4core.useTheme(am4themes_animated);
 
-var chart = am4core.create("chartdiv", am4charts.XYChart);
-chart.paddingRight = 50;
-chart.paddingLeft =450;
+var dataWhole = $.getJSON("/external_data/bloomberg-DF1-Generic-1st-Coffee-Robusta-10-Tonne-random-sentiment.json", function( data ){
+    console.log(data);
+    // chart definition
+    var chart = am4core.create("chartdiv", am4charts.XYChart);
+    chart.paddingRight = 50;
+    chart.paddingLeft =450;
 
-var data = [];
-var visits = 0;
-for (var i = 1; i < 366; i++) {
-  visits = Math.random();
-  data.push({ date: new Date(2018, 0, i), value: visits });
-}
+    chart.data = data;
 
-chart.data = data;
+    var title = chart.titles.create();
+    title.text = "Sentiment Analysis";
+    title.fontSize = 40;
+    title.fontFamily = "Helvetica Neue"
+    title.marginBottom = 30;
+    title.align = "center"
 
-var title = chart.titles.create();
-title.text = "Sentiment Analysis";
-title.fontSize = 40;
-title.fontFamily = "Helvetica Neue"
-title.marginBottom = 30;
-title.align = "center"
+    // Axis set up
+    var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+    dateAxis.renderer.grid.template.location = 0;
+    dateAxis.tooltip.disabled = false;
+    dateAxis.dataFields.category = "Date";
 
-var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-dateAxis.renderer.grid.template.location = 0;
-dateAxis.tooltip.disabled = false;
+    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.tooltip.disabled = true;
+    valueAxis.renderer.minWidth = 35;
 
-var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-valueAxis.tooltip.disabled = true;
-valueAxis.renderer.minWidth = 35;
+    // Line series set up
+    var sentimentSeries = chart.series.push(new am4charts.LineSeries());
+    sentimentSeries.name = "Sentiment";
+    sentimentSeries.dataFields.dateX = "date";
+    sentimentSeries.dataFields.valueY = "value";
+    sentimentSeries.tooltipText = "{valueY}";
+    sentimentSeries.tooltip.pointerOrientation = "vertical";
+    sentimentSeries.tooltip.background.fillOpacity = 0.5;
 
-var series = chart.series.push(new am4charts.LineSeries());
-series.dataFields.dateX = "date";
-series.dataFields.valueY = "value";
-series.tooltipText = "{valueY}";
-series.tooltip.pointerOrientation = "vertical";
-series.tooltip.background.fillOpacity = 0.5;
+    var openInterestSeries = chart.series.push(new am4charts.LineSeries());
+    openInterestSeries.name = "Open Interest";
+    openInterestSeries.dataFields.valueY = "Exports";
+    openInterestSeries.dataFields.categoryX = "year";
+    openInterestSeries.bullets.push(new am4charts.CircleBullet());
+    openInterestSeries.minBulletDistance = 15;
 
-chart.cursor = new am4charts.XYCursor();
-chart.cursor.snapToSeries = series;
-chart.cursor.xAxis = dateAxis;
+    chart.cursor = new am4charts.XYCursor();
+    chart.cursor.snapToSeries = sentimentSeries;
+    chart.cursor.xAxis = dateAxis;
 
-var scrollbarX = new am4charts.XYChartScrollbar();
-scrollbarX.series.push(series);
-chart.scrollbarX = scrollbarX;
+    var scrollbarX = new am4charts.XYChartScrollbar();
+    scrollbarX.series.push(sentimentSeries);
+    chart.scrollbarX = scrollbarX;
+});
