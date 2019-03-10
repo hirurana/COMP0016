@@ -7,7 +7,7 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
 
     // create title
     var title = chart.titles.create();
-    title.text = "ICO Trade Statistics";
+    title.text = "ICO World Trade Statistics";
     title.fontSize = 40;
     title.fontFamily = "Helvetica Neue"
     title.marginBottom = 30;
@@ -200,9 +200,10 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
         ev.target.series.chart.zoomToMapObject(ev.target);
         var countryAlpha2 = ev.target.dataItem.dataContext.id;
         // console.log(countryAlpha2);
-        var countryData = data.find(x => x.id === countryAlpha2).data;
-        console.log(countryData);
-        chart.data = countryData;
+        var hitData = data.find(x => x.id === countryAlpha2);
+        // console.log(hitData);
+        title.text = "ICO " + hitData.country + " Trade Statistics"
+        chart.data = hitData.data;
     });
 
     map.zoomControl = new am4maps.ZoomControl();
@@ -218,6 +219,7 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
     button.marginRight = 15;
     button.events.on("hit", function() {
         chart.data = worldData;
+        title.text = "ICO World Trade Statistics"
         map.goHome();
     });
     button.icon = new am4core.Sprite();
