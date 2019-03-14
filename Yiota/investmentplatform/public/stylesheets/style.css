@@ -1,6 +1,11 @@
+html{
+    height: 100%;
+}
+
 body {
   padding: 50px;
-  font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100%;
+  font: 15px "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-image: url("frost.jpg");
 }
 
@@ -49,7 +54,7 @@ p {
 .select-commodity {
   padding: 10px;
   font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: rgb(73, 73, 73);  
+  color: rgb(73, 73, 73);
 }
 
 .select-commodity-choices {
@@ -68,6 +73,7 @@ p {
   padding-bottom: 15px;
 }
 
+<<<<<<< HEAD
 .nav-bar {
   background-color:#000628;
   overflow: hidden;  
@@ -94,4 +100,26 @@ p {
 
 
 
+=======
+/*  For chart layout */
+/* Control the left side */
+.left {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    background-color: #000020;
+}
+/* Control the right side */
+.right {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    background-color: #efefef;
+}
+/* If you want the content centred horizontally and vertically */
+>>>>>>> 471d3c8b43755219185119c2b1a50a4daf4bffe4
 
+.full  {
+    background-color: #efefef;
+    height: 100%;
+}

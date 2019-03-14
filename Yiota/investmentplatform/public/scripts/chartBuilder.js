@@ -5,6 +5,14 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
     console.log(data);
     chart.data = worldData;
 
+    // create title
+    var title = chart.titles.create();
+    title.text = "ICO World Trade Statistics";
+    title.fontSize = 40;
+    title.fontFamily = "Helvetica Neue"
+    title.marginBottom = 30;
+    title.align = "center"
+
     // create axis
     var yearAxis = chart.xAxes.push(new am4charts.CategoryAxis());
     yearAxis.title.text = "Year";
@@ -145,17 +153,6 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
     // Make a panning cursor
     chart.cursor = new am4charts.XYCursor();
 
-    // Create a horizontal scrollbar with previe and place it underneath the date axis
-    chart.scrollbarX = new am4charts.XYChartScrollbar();
-    chart.scrollbarX.series.push(productionSeries);
-    chart.scrollbarX.series.push(exportSeries);
-    chart.scrollbarX.series.push(domesticConsumptionSeries);
-    chart.scrollbarX.series.push(importsSeries);
-    chart.scrollbarX.series.push(disappearanceSeries);
-    chart.scrollbarX.series.push(netImportsSeries);
-    chart.scrollbarX.series.push(reExportsSeries);
-    // chart.scrollbarX.parent = chart.bottomAxesContainer;  THIS LINE IS CAUSING PROBLEMS // TODO: SORT THIS OUT
-
     // LEGEND
     chart.legend = new am4charts.Legend();
     chart.legend.useDefaultMarker = true;
@@ -182,13 +179,13 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
     // Configure series
     var polygonTemplate = polygonSeries.mapPolygons.template;
     polygonTemplate.tooltipText = "{name}";
-    polygonTemplate.fill = am4core.color("#6495ed");
+    polygonTemplate.fill = am4core.color("#4f1e14");
     polygonTemplate.strokeWidth = 0.2;
     polygonTemplate.stroke = am4core.color("#000");
 
     // Create hover state and set alternative fill color
     var hs = polygonTemplate.states.create("hover");
-    hs.properties.fill = am4core.color("#4169e1");
+    hs.properties.fill = am4core.color("#355824");
 
     // Only include countries in the map that there is data for
     var countries = [];
@@ -203,9 +200,10 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
         ev.target.series.chart.zoomToMapObject(ev.target);
         var countryAlpha2 = ev.target.dataItem.dataContext.id;
         // console.log(countryAlpha2);
-        var countryData = data.find(x => x.id === countryAlpha2).data;
-        console.log(countryData);
-        chart.data = countryData;
+        var hitData = data.find(x => x.id === countryAlpha2);
+        // console.log(hitData);
+        title.text = "ICO " + hitData.country + " Trade Statistics"
+        chart.data = hitData.data;
     });
 
     map.zoomControl = new am4maps.ZoomControl();
@@ -221,6 +219,7 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
     button.marginRight = 15;
     button.events.on("hit", function() {
         chart.data = worldData;
+        title.text = "ICO World Trade Statistics"
         map.goHome();
     });
     button.icon = new am4core.Sprite();
