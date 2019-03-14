@@ -6,10 +6,13 @@ body {
 
 h4 {
   color: whitesmoke;
+  font-size: 14px;
 }
 
 h3 {
   color: whitesmoke;
+  font-size: 21px;
+
 }
 
 h2 {
@@ -28,6 +31,11 @@ p {
   position: absolute;
   left: 40%;
   margin-left: -150px;
+}
+
+.wrapper p {
+  color: #cfdff9;
+  font-size: 20px;
 }
 
 .home-subtitle {
@@ -56,9 +64,34 @@ p {
   padding: 20px;
 }
 
-
 .space {
   padding-bottom: 15px;
 }
+
+.nav-bar {
+  background-color:#000628;
+  overflow: hidden;  
+  width: 100%; 
+}
+
+.nav-bar a {
+  float: right;
+  color: #f4f7f7;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.nav-bar a:hover {
+  color: #c9d8ff;
+}
+
+.nav-bar a.active {
+  font-style: bold;
+  color: #cfdff9;
+}
+
+
 
 
