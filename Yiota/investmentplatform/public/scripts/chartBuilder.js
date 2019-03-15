@@ -23,6 +23,8 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
     // TODO: set minimum to be -4500
 
     var productionSeries = chart.series.push(new am4charts.LineSeries());
+    productionSeries.fill = "#333989"
+    productionSeries.stroke = "#333989"
     productionSeries.name = "Production";
     productionSeries.dataFields.valueY = "Production";
     productionSeries.dataFields.categoryX = "year";
@@ -40,6 +42,8 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
     productionSeries.tooltip.label.textValign = "middle";
 
     var exportSeries = chart.series.push(new am4charts.LineSeries());
+    exportSeries.fill = "#7ab30b"
+    exportSeries.stroke = "#7ab30b"
     exportSeries.name = "Exports";
     exportSeries.dataFields.valueY = "Exports";
     exportSeries.dataFields.categoryX = "year";
@@ -57,6 +61,8 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
     exportSeries.tooltip.label.textValign = "middle";
 
     var domesticConsumptionSeries = chart.series.push(new am4charts.LineSeries());
+    domesticConsumptionSeries.fill = "#0283AF"
+    domesticConsumptionSeries.stroke = "#0283AF"
     domesticConsumptionSeries.name = "Domestic Consumption";
     domesticConsumptionSeries.dataFields.valueY = "DomesticConsumption";
     domesticConsumptionSeries.dataFields.categoryX = "year";
@@ -74,6 +80,8 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
     domesticConsumptionSeries.tooltip.label.textValign = "middle";
 
     var importsSeries = chart.series.push(new am4charts.LineSeries());
+    importsSeries.fill = "#EE7F00"
+    importsSeries.stroke = "#EE7F00"
     importsSeries.name = "Imports";
     importsSeries.dataFields.valueY = "Imports";
     importsSeries.dataFields.categoryX = "year";
@@ -91,6 +99,8 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
     importsSeries.tooltip.label.textValign = "middle";
 
     var disappearanceSeries = chart.series.push(new am4charts.LineSeries());
+    disappearanceSeries.fill = "#B7016A"
+    disappearanceSeries.stroke = "#B7016A"
     disappearanceSeries.name = "Disappearance";
     disappearanceSeries.dataFields.valueY = "Disappearance";
     disappearanceSeries.dataFields.categoryX = "year";
@@ -108,6 +118,8 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
     disappearanceSeries.tooltip.label.textValign = "middle";
 
     var netImportsSeries = chart.series.push(new am4charts.LineSeries());
+    netImportsSeries.fill = "#015430"
+    netImportsSeries.stroke = "#015430"
     netImportsSeries.name = "Net Imports";
     netImportsSeries.dataFields.valueY = "NetImports";
     netImportsSeries.dataFields.categoryX = "year";
@@ -125,6 +137,8 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
     netImportsSeries.tooltip.label.textValign = "middle";
 
     var reExportsSeries = chart.series.push(new am4charts.LineSeries());
+    reExportsSeries.fill = "#DC0112"
+    reExportsSeries.stroke = "#DC0112"
     reExportsSeries.name = "Re-Imports";
     reExportsSeries.dataFields.valueY = "ReImports";
     reExportsSeries.dataFields.categoryX = "year";
@@ -179,9 +193,9 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
     // Configure series
     var polygonTemplate = polygonSeries.mapPolygons.template;
     polygonTemplate.tooltipText = "{name}";
-    polygonTemplate.fill = am4core.color("#4f1e14");
+    polygonTemplate.fill = am4core.color("#A9A9A9");
     polygonTemplate.strokeWidth = 0.2;
-    polygonTemplate.stroke = am4core.color("#000");
+    polygonTemplate.stroke = am4core.color("#f9f9f9");
 
     // Create hover state and set alternative fill color
     var hs = polygonTemplate.states.create("hover");

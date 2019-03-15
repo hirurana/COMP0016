@@ -76,8 +76,8 @@ p {
 <<<<<<< HEAD
 .nav-bar {
   background-color:#000628;
-  overflow: hidden;  
-  width: 100%; 
+  overflow: hidden;
+  width: 100%;
 }
 
 .nav-bar a {
@@ -98,16 +98,13 @@ p {
   color: #cfdff9;
 }
 
-
-
-=======
 /*  For chart layout */
 /* Control the left side */
 .left {
     display: inline-block;
     width: 50%;
     height: 100%;
-    background-color: #000020;
+    background-color: #fbfbfb;
 }
 /* Control the right side */
 .right {
@@ -117,7 +114,6 @@ p {
     background-color: #efefef;
 }
 /* If you want the content centred horizontally and vertically */
->>>>>>> 471d3c8b43755219185119c2b1a50a4daf4bffe4
 
 .full  {
     background-color: #efefef;
