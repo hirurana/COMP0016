@@ -1,3 +1,5 @@
+var selected_country = "WORLD"
+
 var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
     var countries = data.map(function(a) {return a.id;});
     var chart = am4core.create("chartdiv", am4charts.XYChart);
@@ -215,8 +217,8 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
         var countryAlpha2 = ev.target.dataItem.dataContext.id;
         // console.log(countryAlpha2);
         var hitData = data.find(x => x.id === countryAlpha2);
-        // console.log(hitData);
-        title.text = "ICO " + hitData.country + " Trade Statistics"
+        selected_country = hitData.country
+        title.text = "ICO " + selected_country + " Trade Statistics"
         chart.data = hitData.data;
     });
 
@@ -239,3 +241,12 @@ var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
     button.icon = new am4core.Sprite();
     button.icon.path = "M16,8 L14,8 L14,16 L10,16 L10,10 L6,10 L6,16 L2,16 L2,8 L0,8 L8,0 L16,8 Z M16,8";
 });
+
+
+// button for downloading files
+document.getElementById("export").onclick = function () {
+    // TODO: Make this code send country name to server
+    var parameters = { country_name: selected_country};
+    $.get( '/coffee/worldmap/download/', parameters);
+    Http.send();
+};

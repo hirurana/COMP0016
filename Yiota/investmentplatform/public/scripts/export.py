@@ -1,14 +1,19 @@
 import pandas as pd
 from pandas import DataFrame
 import sys
+import json
+import os
+import sys
 
 # arguments
 # country name and record type
 country_input = sys.argv[1]
-
 # Will have to change to pull from database
 print("Loading JSON file...")
-df = pd.read_json("../external_data/ICO.json")
+with open('../public/external_data/ICO.json') as f:
+    json_data = json.load(f)
+
+df = pd.DataFrame(json_data)
 
 print("Processing JSON file...")
 # get longest set of years
@@ -43,5 +48,7 @@ for i in range(1,len(columns)):
 output.columns = columns
 
 print("Writing to XLSX file...")
-output.to_excel("exported_data.xlsx")
+output.to_excel("../public/external_data/exported_data.xlsx")
 print("Done!")
+
+sys.exit()
