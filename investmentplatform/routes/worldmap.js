@@ -34,7 +34,8 @@ router.get('/load_maps', function (req, res) {
          db.collection('ico', function (err, collection) {
             collection.find().toArray(function(err, items) {
                 if (err) throw err;
-                console.log(items);
+                //console.log(items);
+		res.send(items);
             });
         });
     });

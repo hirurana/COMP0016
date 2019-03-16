@@ -1,3 +1,4 @@
 .DS_Store
 Hiru/AttentionBiDirectionalLSTM/attention_weights.h5
 Hiru/AttentionBiDirectionalLSTM/data/
+investmentplatform/bin/*.out
