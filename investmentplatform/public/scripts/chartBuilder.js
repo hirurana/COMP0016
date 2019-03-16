@@ -1,6 +1,6 @@
 var selected_country = "WORLD"
 
-var dataWhole = $.getJSON("/external_data/ICO.json", function( data ){
+var dataWhole = $.get("/coffee/worldmap/load_maps", function( data ){
     var countries = data.map(function(a) {return a.id;});
     var chart = am4core.create("chartdiv", am4charts.XYChart);
     var worldData = data.find(x => x.id === "WORLD").data;
