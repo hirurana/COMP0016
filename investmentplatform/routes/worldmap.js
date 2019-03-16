@@ -14,26 +14,13 @@ router.get('/download', function(req, res) {
         scriptPath: __dirname + '/../public/scripts/',
         args: [country_name]
     };
-    let pyshell = new PythonShell('export.py', options);
-    pyshell.on('message', function (message) {
-        console.log(message);
-    })
-    pyshell.end(function (err,code,signal) {
-        if (err) throw err;
-        console.log('The exit code was: ' + code);
-        console.log('The exit signal was: ' + signal);
-        console.log('finished');
-        console.log('finished');
-    });
+    
+    var file = __dirname + '/../public/external_data/exported_data.xlsx';
+    res.download(file);
     // PythonShell.run('export.py', options, function (err, results) {
     //     if (err) throw err;
     //     // results is an array consisting of messages collected during execution
     //     console.log('results: %j', results);
     // });
-
-
-    var file = __dirname + '/../public/external_data/exported_data.xlsx';
-    res.download(file);
 });
-
 module.exports = router;
