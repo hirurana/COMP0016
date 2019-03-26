@@ -11,8 +11,13 @@ router.get('/', function(req, res, next) {
 
 router.get('/download', function(req, res) {
     var country_name = req.query.country_name;
-    console.log(country_name);
-    res.send('hello')
+    var options = {
+        scriptPath: __dirname + '/../public/scripts/',
+        args: [country_name]
+    };
+
+    var file = __dirname + '/../public/external_data/exported_data.xlsx';
+    res.download(file);
 });
 
 router.get('/load_maps', function (req, res) {
