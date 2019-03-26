@@ -32,6 +32,7 @@ app.use('/about', aboutRouter);
 app.use('/coffee', coffeeRouter);
 app.use('/coffee/articles', articlesRouter);
 app.use('/coffee/worldmap', worldmapRouter);
+app.use('/worldmap/download', worldmapRouter);
 app.use('/coffee/sentimentanalysis', sentimentanalysisRouter);
 
 // catch 404 and forward to error handler
