@@ -1,4 +1,4 @@
-var selected_country = "WORLD"
+var selected_country = "WORLD";
 
 var dataWhole = $.get("/coffee/worldmap/load_maps", function( data ){
     var countries = data.map(function(a) {return a.id;});
@@ -218,6 +218,7 @@ var dataWhole = $.get("/coffee/worldmap/load_maps", function( data ){
         // console.log(countryAlpha2);
         var hitData = data.find(x => x.id === countryAlpha2);
         selected_country = hitData.country
+        console.log(selected_country);
         title.text = "ICO " + selected_country + " Trade Statistics"
         chart.data = hitData.data;
     });
@@ -245,8 +246,6 @@ var dataWhole = $.get("/coffee/worldmap/load_maps", function( data ){
 
 // button for downloading files
 document.getElementById("export").onclick = function () {
-    // TODO: Make this code send country name to server
     var parameters = { country_name: selected_country};
-    $.get( '/coffee/worldmap/download/', parameters);
-    Http.send();
+    $.post( '/coffee/worldmap/download', parameters);
 };

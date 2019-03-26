@@ -11,18 +11,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/download', function(req, res) {
     var country_name = req.query.country_name;
-    var options = {
-        scriptPath: __dirname + '/../public/scripts/',
-        args: [country_name]
-    };
-
-    var file = __dirname + '/../public/external_data/exported_data.xlsx';
-    res.download(file);
-    // PythonShell.run('export.py', options, function (err, results) {
-    //     if (err) throw err;
-    //     // results is an array consisting of messages collected during execution
-    //     console.log('results: %j', results);
-    // });
+    console.log(country_name);
 });
 
 router.get('/load_maps', function (req, res) {
