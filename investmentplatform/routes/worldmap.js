@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
 router.get('/download', function(req, res) {
     var country_name = req.query.country_name;
     console.log(country_name);
+    res.send('hello')
 });
 
 router.get('/load_maps', function (req, res) {
@@ -28,5 +29,5 @@ router.get('/load_maps', function (req, res) {
             });
         });
     });
-})
+});
 module.exports = router;

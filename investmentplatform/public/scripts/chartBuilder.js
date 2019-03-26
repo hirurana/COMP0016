@@ -247,5 +247,5 @@ var dataWhole = $.get("/coffee/worldmap/load_maps", function( data ){
 // button for downloading files
 document.getElementById("export").onclick = function () {
     var parameters = { country_name: selected_country};
-    $.post( '/coffee/worldmap/download', parameters);
+    $.post('/coffee/worldmap/download', parameters);
 };
