@@ -2,13 +2,11 @@ extends layout
 
 block content
 
-    nav.navbar.navbar-default.navbar-fixed-top
     div.container-fluid
-
-
-
-    h4 Next Generation
-    h3 Scientific Asset Management
+    div.btn-group
+      a.btn.btn-primary.btn-lg(href="../") Home
+      a.btn.btn-primary.btn-lg(href="./") Coffee
+    h3 Asset Investment Platform <i>powered by</i> Sentiment Analysis
 
     #chartdiv.full
     script(src='/scripts/sentimentChart.js')
