@@ -11,7 +11,7 @@ var d3 = require("d3");
 var indexRouter = require('./routes/index');
 var aboutRouter = require('./routes/about');
 var coffeeRouter = require('./routes/coffee');
-var articlesRouter = require('./routes/articles');
+var articlesRouter = require('./routes/newsarticles');
 var worldmapRouter = require('./routes/worldmap');
 var sentimentanalysisRouter = require('./routes/sentimentanalysis');
 
@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/about', aboutRouter);
 app.use('/coffee', coffeeRouter);
-app.use('/coffee/articles', articlesRouter);
+app.use('/coffee/newsarticles', articlesRouter);
 app.use('/coffee/worldmap', worldmapRouter);
 app.use('/coffee/sentimentanalysis', sentimentanalysisRouter);
 
